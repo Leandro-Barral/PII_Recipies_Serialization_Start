@@ -9,7 +9,7 @@ using System.Text.Json.Serialization;
 
 namespace Recipies
 {
-    public class Product
+    public class Product : IJsonConvertible
     {
         [JsonConstructor]
         public Product(string description, double unitCost)
