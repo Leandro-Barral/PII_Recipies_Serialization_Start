@@ -26,5 +26,15 @@ namespace Recipies
         public string Description { get; set; }
 
         public double HourlyCost { get; set; }
+
+        public string ConvertToJson(){
+            return JsonSerializer.Serialize(this);
+        }
+
+        public void LoadFromJson(string json){
+            Equipment deserialized = JsonSerializer.Deserialize<Equipment>(json);
+            this.Description = deserialized.Description;
+            this.HourlyCost = deserialized.HourlyCost;
+        }
     }
 }
